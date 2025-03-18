@@ -62,13 +62,14 @@ a {
 }
 
 header {
-	padding-top:10px;
-	padding-bottom:10px;
-	display:flex;
-	justify-content:space-between;
-	max-width:1440px;
-	margin:auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	max-width: 1440px;
+	margin: auto;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
+	position: relative;
 
 	.logo-holder {
 		display:flex;
@@ -95,22 +96,27 @@ header {
 	}
 
 	nav {
-		display:flex;
-		align-items:center;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		position: relative;
+
 		ul {
-			display:flex;
+			display: flex;
 			list-style-type: none;
-			gap:5px;
+			gap: 5px;
+			margin: 0;
+			padding: 0;
 			li {
-				display:inline-block;
+				display: inline-block;
 				a {
-					display:inline-block;
-					padding:10px 20px;
-					color:var(--base);
+					display: inline-block;
+					padding: 10px 20px;
+					color: var(--base);
 					&:hover {
 						background-color: var(--base-100);
-						border-radius:10px;
-						text-decoration:none;
+						border-radius: 10px;
+						text-decoration: none;
 					}
 				}
 			}
@@ -140,15 +146,15 @@ header {
 			margin-top:10px;
 			width:100%;
 			ul {
-				display:none;
-				flex-direction:column;
-				text-align:center;
-				width:100%;
+				display: none;
+				flex-direction: column;
+				text-align: center;
+				width: 100%;
 				a {
-					width:100%;
+					width: 100%;
 				}
 				&.active {
-					display:flex;
+					display: flex;
 				}
 			}
 		}
@@ -732,6 +738,10 @@ h3 {
     display: flex;
     align-items: center;
     gap: 15px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
 }
 
 .theme-toggle {
@@ -741,8 +751,15 @@ h3 {
     padding: 8px;
     color: var(--base-800);
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &:hover {
         color: var(--blue);
+    }
+    svg {
+        width: 24px;
+        height: 24px;
     }
 }
 
@@ -757,6 +774,7 @@ h3 {
                 &:hover, &:focus {
                     background-color: var(--base-100);
                     border-color: var(--base-800);
+                    color: var(--base-800);
                 }
             }
             button {
