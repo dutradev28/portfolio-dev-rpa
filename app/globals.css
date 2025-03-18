@@ -25,6 +25,22 @@ html {
     --blue-900: #3088d4;
 }
 
+[data-theme="dark"] {
+    --base: #888;
+    --base-100: #1a1a1a;
+    --base-400: #888;
+    --base-800: #fff;
+    --yellow: #ffda4b;
+    --yellow-100: #2a2a1a;
+    --yellow-400: #ffda4b;
+    --yellow-800: #ffd700;
+    --blue: #61dafb;
+    --blue-100: #1a2a3a;
+    --blue-400: #61dafb;
+    --blue-800: #61dafb;
+    --blue-900: #3088d4;
+}
+
 body {
 	font-family: "Inter", sans-serif;
 	font-optical-sizing: auto;
@@ -32,6 +48,9 @@ body {
 	font-size: 18px;
 	line-height: 1.6;
 	padding-bottom: 30px;
+	background-color: var(--base-100);
+	color: var(--base-800);
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -708,4 +727,38 @@ h3 {
 	50% { opacity: 0; } 
 	100% { opacity: 1; } 
   }
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--base-800);
+    transition: color 0.3s ease;
+    &:hover {
+        color: var(--blue);
+    }
+}
+
+.chatbot {
+    .chatbot-blue {
+        .chat-box {
+            background-color: var(--base-100);
+            input {
+                background-color: var(--base-100);
+                color: var(--base-800);
+                &:hover, &:focus {
+                    background-color: var(--base-100);
+                    border-color: var(--base-400);
+                }
+            }
+        }
+    }
+}
 
