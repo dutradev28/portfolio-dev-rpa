@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/portfolio-dev-rpa',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '/portfolio-dev-rpa',
   images: {
     unoptimized: true
-  }
+  },
+  trailingSlash: true
 };
 
 export default nextConfig;
