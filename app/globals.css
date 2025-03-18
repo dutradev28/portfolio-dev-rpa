@@ -178,7 +178,7 @@ section {
     background-color: var(--blue);
     color: var(--base-100);
     border-radius: 10px;
-    transition: ease 0.3 all;
+    transition: ease 0.3s all;
     font-weight: 500;
     letter-spacing: 0.01em;
     &:hover {
@@ -186,19 +186,19 @@ section {
         background-color: var(--base-800);
     }
     &.white {
-        background-color: white;
+        background-color: var(--base-100);
         color: var(--base-800);
         &:hover {
-            background-color: var(--base-100);
-            color:var(--blue)
+            background-color: var(--base-400);
+            color: var(--base-100);
         }
     }
     &.black {
-        background-color: black;
-        color: white;
+        background-color: var(--base-800);
+        color: var(--base-100);
         &:hover {
-            background-color: var(--base);
-            color: var(--base-100)
+            background-color: var(--base-400);
+            color: var(--base-100);
         }
     }
     &.whatsapp {
@@ -717,7 +717,7 @@ h3 {
 	display: inline-block;
 	width: 1px; 
 	height: 1em; 
-	background-color: black;
+	background-color: var(--base-800);
 	margin-left: 2px;
 	animation: blink 1s infinite; 
   }
@@ -753,9 +753,18 @@ h3 {
             input {
                 background-color: var(--base-100);
                 color: var(--base-800);
+                border: 1px solid var(--base-400);
                 &:hover, &:focus {
                     background-color: var(--base-100);
-                    border-color: var(--base-400);
+                    border-color: var(--base-800);
+                }
+            }
+            button {
+                background-color: var(--base-800);
+                color: var(--base-100);
+                &:hover {
+                    background-color: var(--base-400);
+                    color: var(--base-100);
                 }
             }
         }
