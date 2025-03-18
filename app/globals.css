@@ -29,7 +29,7 @@ html {
     --base: #888;
     --base-100: #1a1a1a;
     --base-400: #888;
-    --base-800: #000;
+    --base-800: #fff;
     --yellow: #ffda4b;
     --yellow-100: #2a2a1a;
     --yellow-400: #ffda4b;
@@ -769,7 +769,7 @@ h3 {
             background-color: var(--base-100);
             input {
                 background-color: var(--base-100);
-                color: var(--base-800);
+                color: #000;
                 border: 1px solid var(--base-400);
                 &:focus {
                     outline: none;
