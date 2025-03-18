@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
 *, *::before, *::after {
 	box-sizing: border-box;
 	margin:0;
 	padding:0;
-	font-family: "Open Sans", sans-serif;
+	font-family: "Inter", sans-serif;
 }
 html {
     scroll-behavior: smooth;
@@ -24,10 +26,11 @@ html {
 }
 
 body {
-	font-family: "Open Sans", sans-serif;
+	font-family: "Inter", sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
-	font-size: 20px;
+	font-size: 18px;
+	line-height: 1.6;
 	padding-bottom:1000px;
 }
 
@@ -148,15 +151,16 @@ section {
 
 .button {
     display:inline-block;
-    padding:10px 30px;
+    padding:12px 32px;
     background-color: var(--blue);
     color: var(--base-100);
     border-radius: 10px;
     transition: ease 0.3 all;
+    font-weight: 500;
+    letter-spacing: 0.01em;
     &:hover {
         text-decoration: none;
         background-color: var(--base-800);
-
     }
     &.white {
         background-color: white;
@@ -176,18 +180,44 @@ section {
     }
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
 h1 {
     font-size: 64px;
-    line-height: 1;
+    line-height: 1.2;
     margin-bottom: 10px;
+    letter-spacing: -0.02em;
     small {
         display: block;
-        font-weight: 100;
+        font-weight: 400;
     }
     @media (max-width:1024px){
         font-size: 48px;
     }
+}
 
+h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    small {
+        display: block;
+        font-weight: 400;
+    }
+    @media (max-width:1024px){
+        font-size: 36px;
+    }
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    letter-spacing: -0.01em;
 }
 
 .hero {
@@ -272,31 +302,6 @@ h1 {
     100% {
         transform: translateX(-50%);
     }
-}
-
-h2 {
-    font-size:64px;
-    line-height: 1;
-    margin-bottom: 10px;
-    text-align: center;
-    color: var(--base-800);
-    padding: 30px;
-    small{
-        display:block;
-        font-weight: 100;
-        font-size:0.5em;
-        color:var(--base);
-    }
-    @media (max-width:1024px){
-        font-size:48px;
-    }
-}
-
-h3 {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--base-800)
 }
 
 .skills {
@@ -559,6 +564,9 @@ h3 {
 						display:flex;
 						align-items:center;
 						gap:15px;
+						font-size: 16px;
+						line-height: 1.5;
+						letter-spacing: 0.01em;
 
 						&:nth-child(even){
 							text-align:right;
@@ -599,6 +607,8 @@ h3 {
 					padding:15px;
 					border:1px solid transparent;
 					background-color: var(--base-100);
+					font-size: 16px;
+					letter-spacing: 0.01em;
 					&:hover {
 						outline:none;
 						background-color:white;
@@ -613,6 +623,8 @@ h3 {
 				button {
 					border:none;
 					cursor:pointer;
+					font-weight: 500;
+					letter-spacing: 0.01em;
 				}
 			}
 		}
@@ -642,3 +654,4 @@ h3 {
 	50% { opacity: 0; } 
 	100% { opacity: 1; } 
   }
+
