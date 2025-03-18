@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import curriculo from "./api/chat/curriculo.json";
 
 const getImagePath = (path) => {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -82,7 +83,11 @@ export default function Home() {
           messages: [
             {
               role: "system",
-              content: "Você é um assistente que responde perguntas sobre o currículo de Luis Carlos Dutra Junior. Responda de forma clara e concisa, com base nas informações fornecidas."
+              content: `Você é um assistente que responde perguntas sobre o currículo de Luis Carlos Dutra Junior. Use as seguintes informações para basear suas respostas:
+
+${JSON.stringify(curriculo, null, 2)}
+
+Responda de forma clara e concisa, com base nas informações fornecidas.`
             },
             {
               role: "user",
