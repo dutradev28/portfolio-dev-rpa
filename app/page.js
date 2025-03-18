@@ -1,6 +1,11 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 
+const getImagePath = (path) => {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  return `${basePath}${path}`;
+};
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -136,48 +141,48 @@ export default function Home() {
                   </div>
                   <div className="social-links">
                       <a href="https://github.com/dutradev28" target="_blank">
-                          <img src="./imgs/github.png" alt="GitHub" width="48" />
+                          <img src={getImagePath("/imgs/github.png")} alt="GitHub" width="48" />
                       </a>
                       <a href="https://www.linkedin.com/in/luis-carlos-dutra-junior-58a1a51b6/" target="_blank">
-                          <img src="./imgs/linkedin.png" alt="LinkedIn" width="48" />
+                          <img src={getImagePath("/imgs/linkedin.png")} alt="LinkedIn" width="48" />
                       </a>
                   </div>
               </div>
               <div className="hero-yellow">
-                  <img src="./imgs/hero-image.png" alt="Luis Carlos" width="100%" />
+                  <img src={getImagePath("/imgs/hero-image.png")} alt="Luis Carlos" width="100%" />
               </div>
           </section>
             <section className="logos container">
               <div className="marquee">
                 <div className="track">
-                  <img src="./imgs/html.png" alt="HTML" width="128" height="128" />
-                  <img src="./imgs/css.png" alt="CSS" width="128" height="128" />
-                  <img src="./imgs/javascript.png" alt="JS" width="128" height="128" />
-                  <img src="./imgs/angular.png" alt="Angular" width="128" height="128" />
-                  <img src="./imgs/RPA.png" alt="RPA" width="128" height="128" />
-                  <img src="./imgs/vscode.png" alt="VSCODE" width="128" height="128" />
-                  <img src="./imgs/git.png" alt="Git" width="128" height="128" />
-                  <img src="./imgs/python.png" alt="PYTHON" width="128" height="128" />
-                  <img src="./imgs/selenium.png" alt="SELENIUM WEBDRIVER" width="128" height="128" />
-                  <img src="./imgs/fastapi.png" alt="FASTAPI" width="128" height="128" />
-                  <img src="./imgs/celery.png" alt="CELERY" width="128" height="128" />
-                  <img src="./imgs/redis.png" alt="REDIS" width="128" height="128" />
-                  <img src="./imgs/linux.png" alt="LINUX" width="128" height="128" />
-                  <img src="./imgs/azure.png" alt="AZURE" width="128" height="128" />
-                  <img src="./imgs/html.png" alt="HTML" width="128" height="128" />
-                  <img src="./imgs/css.png" alt="CSS" width="128" height="128" />
-                  <img src="./imgs/javascript.png" alt="JS" width="128" height="128" />
-                  <img src="./imgs/angular.png" alt="Angular" width="128" height="128" />
-                  <img src="./imgs/RPA.png" alt="RPA" width="128" height="128" />
-                  <img src="./imgs/vscode.png" alt="VSCODE" width="128" height="128" />
-                  <img src="./imgs/git.png" alt="Git" width="128" height="128" />
-                  <img src="./imgs/python.png" alt="PYTHON" width="128" height="128" />
-                  <img src="./imgs/selenium.png" alt="SELENIUM WEBDRIVER" width="128" height="128" />
-                  <img src="./imgs/fastapi.png" alt="FASTAPI" width="128" height="128" />
-                  <img src="./imgs/celery.png" alt="CELERY" width="128" height="128" />
-                  <img src="./imgs/redis.png" alt="REDIS" width="128" height="128" />
-                  <img src="./imgs/linux.png" alt="LINUX" width="128" height="128" />
-                  <img src="./imgs/azure.png" alt="AZURE" width="128" height="128" />
+                  <img src={getImagePath("/imgs/html.png")} alt="HTML" width="128" height="128" />
+                  <img src={getImagePath("/imgs/css.png")} alt="CSS" width="128" height="128" />
+                  <img src={getImagePath("/imgs/javascript.png")} alt="JS" width="128" height="128" />
+                  <img src={getImagePath("/imgs/angular.png")} alt="Angular" width="128" height="128" />
+                  <img src={getImagePath("/imgs/RPA.png")} alt="RPA" width="128" height="128" />
+                  <img src={getImagePath("/imgs/vscode.png")} alt="VSCODE" width="128" height="128" />
+                  <img src={getImagePath("/imgs/git.png")} alt="Git" width="128" height="128" />
+                  <img src={getImagePath("/imgs/python.png")} alt="PYTHON" width="128" height="128" />
+                  <img src={getImagePath("/imgs/selenium.png")} alt="SELENIUM WEBDRIVER" width="128" height="128" />
+                  <img src={getImagePath("/imgs/fastapi.png")} alt="FASTAPI" width="128" height="128" />
+                  <img src={getImagePath("/imgs/celery.png")} alt="CELERY" width="128" height="128" />
+                  <img src={getImagePath("/imgs/redis.png")} alt="REDIS" width="128" height="128" />
+                  <img src={getImagePath("/imgs/linux.png")} alt="LINUX" width="128" height="128" />
+                  <img src={getImagePath("/imgs/azure.png")} alt="AZURE" width="128" height="128" />
+                  <img src={getImagePath("/imgs/html.png")} alt="HTML" width="128" height="128" />
+                  <img src={getImagePath("/imgs/css.png")} alt="CSS" width="128" height="128" />
+                  <img src={getImagePath("/imgs/javascript.png")} alt="JS" width="128" height="128" />
+                  <img src={getImagePath("/imgs/angular.png")} alt="Angular" width="128" height="128" />
+                  <img src={getImagePath("/imgs/RPA.png")} alt="RPA" width="128" height="128" />
+                  <img src={getImagePath("/imgs/vscode.png")} alt="VSCODE" width="128" height="128" />
+                  <img src={getImagePath("/imgs/git.png")} alt="Git" width="128" height="128" />
+                  <img src={getImagePath("/imgs/python.png")} alt="PYTHON" width="128" height="128" />
+                  <img src={getImagePath("/imgs/selenium.png")} alt="SELENIUM WEBDRIVER" width="128" height="128" />
+                  <img src={getImagePath("/imgs/fastapi.png")} alt="FASTAPI" width="128" height="128" />
+                  <img src={getImagePath("/imgs/celery.png")} alt="CELERY" width="128" height="128" />
+                  <img src={getImagePath("/imgs/redis.png")} alt="REDIS" width="128" height="128" />
+                  <img src={getImagePath("/imgs/linux.png")} alt="LINUX" width="128" height="128" />
+                  <img src={getImagePath("/imgs/azure.png")} alt="AZURE" width="128" height="128" />
                 </div>
               </div>
             </section>
@@ -222,7 +227,7 @@ export default function Home() {
                   <article>
                       <figure>
                           <div>
-                              <img src="./imgs/contabilidade.jpeg" alt="trabalho-1" width="100%" />
+                              <img src={getImagePath("/imgs/contabilidade.jpeg")} alt="trabalho-1" width="100%" />
                               <figcaption>Jesus Oliveira Assessoria Contábil</figcaption>
                           </div>
                       </figure>
@@ -233,7 +238,7 @@ export default function Home() {
                   <article>
                       <figure>
                           <div>
-                              <img src="./imgs/tahto.jpg" alt="trabalho-2" width="100%"/>
+                              <img src={getImagePath("/imgs/tahto.jpg")} alt="trabalho-2" width="100%"/>
                               <figcaption>Tahto Soluções em CX/BPO</figcaption>
                           </div>
                       </figure>
@@ -244,7 +249,7 @@ export default function Home() {
                   <article>
                       <figure>
                           <div>
-                              <img src="./imgs/opencon.png" alt="trabalho-3" width="100%"/>
+                              <img src={getImagePath("/imgs/opencon.png")} alt="trabalho-3" width="100%"/>
                               <figcaption>OpenCON</figcaption>
                           </div>
                       </figure>
@@ -264,37 +269,37 @@ export default function Home() {
               <div className="bento-grid">
                   <a href="#" className="bento-item">
                       <figure>
-                          <img src="./imgs/emissornfse.png" alt="RPA Emissão de NFSe" width="100%" />
+                          <img src={getImagePath("/imgs/emissornfse.png")} alt="RPA Emissão de NFSe" width="100%" />
                           <figcaption>RPA de Emissão de NFSe</figcaption>
                       </figure>
                   </a>
                   <a href="#" className="bento-item">
                       <figure>
-                          <img src="./imgs/das.png" alt="RPA para Guias DAS" width="100%" />
+                          <img src={getImagePath("/imgs/das.png")} alt="RPA para Guias DAS" width="100%" />
                           <figcaption>RPA para Guias DAS</figcaption>
                       </figure>
                   </a>
                   <a href="https://github.com/dutradev28/tahto-unificacao-FeederVeloxR2" target="_blank" className="bento-item">
                       <figure>
-                          <img src="./imgs/unificacaodeferramentas.png" alt="Unificação de Ferramentas" width="100%" />
+                          <img src={getImagePath("/imgs/unificacaodeferramentas.png")} alt="Unificação de Ferramentas" width="100%" />
                           <figcaption>Unificação de Ferramentas</figcaption>
                       </figure>
                   </a>
                   <a href="https://github.com/dutradev28/ProjetoMailingBO" target="_blank" className="bento-item">
                       <figure>
-                          <img src="./imgs/mailingbo.png" alt="Projeto Mailing BO" width="100%" />
+                          <img src={getImagePath("/imgs/mailingbo.png")} alt="Projeto Mailing BO" width="100%" />
                           <figcaption>Projeto Mailing BO</figcaption>
                       </figure>
                   </a>                
                   <a href="https://github.com/dutradev28/Automacao.checkauto.1_0_0_0" target="_blank" className="bento-item">
                       <figure>
-                          <img src="./imgs/checkauto.png" alt="Projeto CheckAuto" width="100%" />
+                          <img src={getImagePath("/imgs/checkauto.png")} alt="Projeto CheckAuto" width="100%" />
                           <figcaption>Projeto CheckAuto</figcaption>
                       </figure>
                   </a>
                   <a href="#" className="bento-item">
                       <figure>
-                          <img src="./imgs/dasn.png" alt="RPA para Tratativa de Mailing" width="100%" />
+                          <img src={getImagePath("/imgs/dasn.png")} alt="RPA para Tratativa de Mailing" width="100%" />
                           <figcaption>RPA Declaração Anual (DASN-simei)</figcaption>
                       </figure>
                   </a>                
@@ -323,9 +328,9 @@ export default function Home() {
                     <li key={index}>
                       <span className={`avatar ${msg.role}`}>
                         {msg.role === "bot" ? (
-                          <img src="/imgs/deepseek.png" alt="AI" width="64" height="64" />
+                          <img src={getImagePath("/imgs/deepseek.png")} alt="AI" width="64" height="64" />
                         ) : (
-                          <img src="/imgs/user.png" alt="User" width="64" height="64" />
+                          <img src={getImagePath("/imgs/user.png")} alt="User" width="64" height="64" />
                         )}
                       </span>
                       <div className="message">{msg.content}</div>
@@ -334,7 +339,7 @@ export default function Home() {
                   {isLoading && (
                     <li>
                       <span className="avatar bot">
-                        <img src="./imgs/deepseek.png" alt="AI" width="64" height="64" />
+                        <img src={getImagePath("/imgs/deepseek.png")} alt="AI" width="64" height="64" />
                       </span>
                       <div className="message">
                         {typingText}
