@@ -16,7 +16,7 @@ Pergunta do usuário: ${message}`;
 
     const completion = await openai.chat.completions.create({
       extra_headers: {
-        "HTTP-Referer": "http://localhost:3000",
+        "HTTP-Referer": "https://dutradev28.github.io/portfolio-dev-rpa",
         "X-Title": "Chatbot",
       },
       model: "deepseek/deepseek-r1-zero:free",
@@ -36,6 +36,7 @@ Pergunta do usuário: ${message}`;
       status: 200,
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
     });
   } catch (error) {
@@ -44,6 +45,7 @@ Pergunta do usuário: ${message}`;
       status: 500,
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
     });
   }
