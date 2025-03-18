@@ -132,7 +132,7 @@ export default function Home() {
                   <p>Desenvolvedor Python com experiência em automação de processos, integração de APIs e desenvolvimento de soluções escaláveis.<span>Trabalho com tecnologias como Python, FastAPI, Celery, Selenium, AWS e banco de dados. Meu foco é otimizar tarefas repetitivas, criar soluções eficientes e melhorar fluxos de trabalho através da tecnologia.</span>
                   </p>
                   <div className="call-to-action">
-                      <a href="./Currículo Luis Carlos.pdf" target="_blank" className="button black">
+                      <a href={getImagePath("/Currículo Luis Carlos.pdf")} target="_blank" className="button black">
                           Currículo
                       </a>
                       <a href="mailto:luiscarlosdutrajunior23@gmail.com" className="button white">
@@ -317,7 +317,7 @@ export default function Home() {
                 Este chatbot foi desenvolvido para responder perguntas sobre minha experiência, habilidades e trajetória profissional. Ele tem acesso ao meu currículo e pode fornecer informações detalhadas sobre os projetos em que trabalhei.
               </p>
               <p>Se quiser conhecer mais sobre meu perfil, interaja com o chatbot ou faça o download do meu currículo!</p>
-              <a href="./Currículo Luis Carlos.pdf" target="_blank" className="button black">
+              <a href={getImagePath("/Currículo Luis Carlos.pdf")} target="_blank" className="button black">
                 Download Curriculo
               </a>
             </div>
