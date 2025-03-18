@@ -688,12 +688,12 @@ h3 {
 					}
 					&:hover {
 						outline:none;
-						background-color:white;
+						background-color:var(--base-1002);
 						border:1px solid var(--base-100);
 					}
 					&:focus {
 						outline:none;
-						background-color:white;
+						background-color:var(--base-1002);
 						border:1px solid var(--base-100);
 					}
 				}
@@ -780,6 +780,11 @@ h3 {
                 transition: all 0.3s ease;
                 @media (max-width:768px){
                     width: 100%;
+                }
+                &:hover {
+                    outline: none;
+                    background-color: var(--base-1002);
+                    border: 1px solid var(--base-100);
                 }
                 &:focus {
                     outline: none;
