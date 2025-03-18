@@ -62,6 +62,10 @@ export default function Home() {
     text = text.trim();
     text = text.replace(/\s+/g, ' ');
 
+    // Remove o prefixo "resposta" e as aspas extras
+    text = text.replace(/^"resposta":\s*"/, '');
+    text = text.replace(/^"|"$/g, '');
+
     // Formata o texto para ficar mais conversacional
     text = text.replace(/\n/g, ' ');
     text = text.replace(/\*\*/g, '');
