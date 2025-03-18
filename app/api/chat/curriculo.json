@@ -1,0 +1,110 @@
+{
+    "nome": "Luis Carlos Dutra Junior",
+    "anos": "30",
+    "contato": {
+      "email": "luiscarlosdutrajunior23@gmail.com",
+      "telefone": "+55 (41) 99838-0354",
+      "linkedin": "linkedin.com/in/luis-carlos-dutra-junior-58alajb6/"
+    },
+    "experiencia": [
+      {
+        "empresa": "OpenCON",
+        "cargo": "Desenvolvedor Python",
+        "periodo": "Novembro/2024 – Atual",
+        "descricao": [
+          "Desenvolvimento de RPAs contábeis para automação de processos como coleta e tratativa de dados, web scraping, emissão de NFSe/NFe, apuração e parcelamento do DAS, parcelamento de dívida ativa e diagnóstico fiscal.",
+          "Criação de APIs para integração com as plataformas OpenCON/OpenMEI, garantindo comunicação eficiente entre sistemas.",
+          "Desenvolvimento de RPAs escaláveis utilizando Celery e tarefas assíncronas, com FastAPI para recebimento de solicitações, Redis para armazenamento das tasks e Flower para monitoramento, com integração ao Grafana.",
+          "Integração e gerenciamento de arquivos na AWS S3."
+        ],
+        "tecnologias": [
+          "Python",
+          "Selenium",
+          "Undetected-chromedriver",
+          "FastAPI",
+          "Nodriver",
+          "Pandas",
+          "boto3",
+          "fitz",
+          "beautifulsoup",
+          "asyncio",
+          "Git/Bitbucket",
+          "APISwagger",
+          "APIRest",
+          "MongoDB",
+          "Threading",
+          "Queue",
+          "Contextlib"
+        ]
+      },
+      {
+        "empresa": "Tahto",
+        "cargo": "Analista I Desenvolvimento de Sistemas",
+        "periodo": "Fevereiro/2024 – Novembro/2024",
+        "descricao": [
+          "Desenvolvimento em Python de scripts para automações de tarefas, coleta de dados, tratativas de dados, manipulação de arquivos, integração com APIRest e documentação.",
+          "Implementação no e-bots para execução e monitoramento de sistemas com Grafana, criando dashboards interativos para visualização de métricas e alertas.",
+          "Desenvolvimento em C# de aplicações automatizadas para otimização de processos, incluindo integração de sistemas via APIRest e documentação."
+        ],
+        "tecnologias": [
+          "C#",
+          "Python",
+          "Selenium",
+          "Pandas",
+          "Git/GitLabs",
+          "TortoiseSVN",
+          "APISwagger",
+          "APIRest",
+          "Oracle SQL Developer",
+          "Mainframe"
+        ]
+      },
+      {
+        "empresa": "Tahto",
+        "cargo": "Assistente de Operações de TI",
+        "periodo": "Fevereiro/2023 – Fevereiro/2024",
+        "descricao": [
+          "Desenvolvimento em Python de scripts para automações de tarefas para facilitar rotinas na equipe de operações.",
+          "Importação e carga de mailings clientes OI.",
+          "Monitoramento de automações e execuções de RPA assistidas.",
+          "Análise de falhas de automações e abertura de chamados de falha para N1, N2 e direcionamento N3.",
+          "Configurações de acesso de automações no banco de dados MariaDB, e análise de falhas de tratativas de arquivos.",
+          "GMUD e acompanhamento de deploys de automações diretamente com a equipe N3."
+        ]
+      }
+    ],
+    "educacao": [
+      {
+        "instituicao": "Unopar",
+        "curso": "Análise e Desenvolvimento de Sistemas",
+        "nivel": "Tecnólogo",
+        "periodo": "2023 - 2025",
+        "status": "Cursando"
+      }
+    ],
+    "skills": {
+      "linguas": [
+        {
+          "idioma": "Português",
+          "nivel": "Nativo"
+        },
+        {
+          "idioma": "Inglês",
+          "nivel": "Técnico"
+        }
+      ],
+      "sistemas_operacionais": [
+        "Windows",
+        "Linux"
+      ],
+      "linguagens_programacao": [
+        "Python",
+        "C#"
+      ],
+      "frameworks": [
+        "Entity Framework",
+        "ASP .NET CORE",
+        "Angular"
+      ]
+    }
+  }
