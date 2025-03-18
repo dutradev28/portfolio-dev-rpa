@@ -182,6 +182,14 @@ section {
             color: var(--base-100)
         }
     }
+    &.whatsapp {
+        background-color: #25D366;
+        color: white;
+        &:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {

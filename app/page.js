@@ -173,6 +173,9 @@ Responda de forma clara e concisa, com base nas informações fornecidas.`
                       <a href="mailto:luiscarlosdutrajunior23@gmail.com" className="button white">
                           Contato
                       </a>
+                      <a href="https://wa.me/5541998380354?text=Olá%20Luis%20Carlos%2C%20gostaria%20de%20conversar%20sobre%20oportunidades%20de%20trabalho." target="_blank" className="button whatsapp">
+                          WhatsApp
+                      </a>
                   </div>
                   <div className="social-links">
                       <a href="https://github.com/dutradev28" target="_blank">
