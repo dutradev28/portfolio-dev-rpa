@@ -131,8 +131,9 @@ Regras para respostas:
 2. Evite repetições
 3. Destaque apenas informações relevantes
 4. Use linguagem simples e clara
-5. Limite a resposta a 2-3 parágrafos
-6. Mantenha um tom profissional mas amigável`
+5. Limite a resposta a 2 parágrafos
+6. Mantenha um tom profissional mas amigável
+7. Não use prefixos como "text" ou "resposta"`
             },
             {
               role: "user",
@@ -143,22 +144,11 @@ Regras para respostas:
       });
 
       const data = await response.json();
-
-      const regex = /\\boxed\{([^}]+)\}/;
-      const match = data.choices[0].message.content.match(regex);
-      
       let botResponse = data.choices[0].message.content;
       
-      // Remove o JSON bruto se estiver presente
-      if (botResponse.includes('```json')) {
-        botResponse = botResponse.replace(/```json\n?|\n?```/g, '');
-      }
+      // Remove o prefixo "text" e as aspas extras
+      botResponse = botResponse.replace(/^`{2}text\s*/, '').replace(/`{2}$/, '');
       
-      // Remove o \boxed{} se estiver presente
-      if (match) {
-        botResponse = match[1];
-      }
-
       const formattedResponse = formatResponse(botResponse);
 
       setTypingText("");
