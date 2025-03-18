@@ -12,6 +12,7 @@ html {
 :root {
 	--base: #555;
 	--base-100: #ffffff;
+	--base-1002: #f1f1f1;
 	--base-400: #555;
 	--base-800: #000;
 	--yellow: #ffda4b;
@@ -679,7 +680,7 @@ h3 {
 					flex:1;
 					padding:15px;
 					border:1px solid transparent;
-					background-color: var(--base-100);
+					background-color: var(--base-1002);
 					font-size: 16px;
 					letter-spacing: 0.01em;
 					@media (max-width:768px){
