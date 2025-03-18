@@ -102,7 +102,18 @@ Responda de forma clara e concisa, com base nas informações fornecidas.`
       const regex = /\\boxed\{([^}]+)\}/;
       const match = data.choices[0].message.content.match(regex);
       
-      const botResponse = match ? match[1] : data.choices[0].message.content;
+      let botResponse = data.choices[0].message.content;
+      
+      // Remove o JSON bruto se estiver presente
+      if (botResponse.includes('```json')) {
+        botResponse = botResponse.replace(/```json\n?|\n?```/g, '');
+      }
+      
+      // Remove o \boxed{} se estiver presente
+      if (match) {
+        botResponse = match[1];
+      }
+
       const formattedResponse = formatResponse(botResponse);
 
       setTypingText("");
