@@ -6,6 +6,10 @@ const getImagePath = (path) => {
   return `${basePath}${path}`;
 };
 
+const isGitHubPages = () => {
+  return window.location.hostname.includes('github.io');
+};
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,6 +18,7 @@ export default function Home() {
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [typingText, setTypingText] = useState("");
+  const [isGitHubPagesEnv, setIsGitHubPagesEnv] = useState(false);
 
   const scrollAreaRef = useRef(null);
 
@@ -38,17 +43,18 @@ export default function Home() {
 
   const formatResponse = (text) => {
     text = text.replace(/^"+|"+$/g, '');
-
     text = text.trim();
-
     text = text.replace(/\s+/g, ' ');
-  
     return text;
   };
 
   useEffect(() => {
     scrollToBottom();
   }, [messages, typingText]);
+
+  useEffect(() => {
+    setIsGitHubPagesEnv(isGitHubPages());
+  }, []);
 
   const toggleMobileMenu = () => {
     setMenuOpen(!menuOpen);
@@ -59,26 +65,36 @@ export default function Home() {
 
     setMessages((prev) => [...prev, { role: "user", content: inputMessage }]);
     setInputMessage("");
-
     
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/chat", {
+      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
+          "HTTP-Referer": "https://dutradev28.github.io/portfolio-dev-rpa",
+          "X-Title": "Chatbot"
         },
-        body: JSON.stringify({ message: inputMessage }),
+        body: JSON.stringify({
+          model: "deepseek/deepseek-r1-zero:free",
+          messages: [
+            {
+              role: "system",
+              content: "Você é um assistente que responde perguntas sobre o currículo de Luis Carlos Dutra Junior. Responda de forma clara e concisa, com base nas informações fornecidas."
+            },
+            {
+              role: "user",
+              content: inputMessage
+            }
+          ]
+        }),
       });
 
       const data = await response.json();
 
-      const regex = /\\boxed\{([^}]+)\}/;
-      const match = data.response.match(regex);
-      
-      const botResponse = match ? match[1] : data.response;
-
+      const botResponse = data.choices[0].message.content;
       const formattedResponse = formatResponse(botResponse);
 
       setTypingText("");
@@ -347,20 +363,35 @@ export default function Home() {
                       </div>
                     </li>
                   )}
+                  {isGitHubPagesEnv && (
+                    <li className="disabled-message">
+                      <span className="avatar bot">
+                        <img src={getImagePath("/imgs/deepseek.png")} alt="AI" width="64" height="64" />
+                      </span>
+                      <div className="message">
+                        O chatbot está temporariamente desabilitado nesta versão do site. Para interagir com o chatbot, por favor acesse a versão local do site ou entre em contato diretamente através do email luiscarlosdutrajunior23@gmail.com
+                      </div>
+                    </li>
+                  )}
                 </ul>
               </div>
               <div className="chat-message">
                 <input
                   type="text"
-                  placeholder="Digite sua pergunta sobre minha experiência..."
+                  placeholder={isGitHubPagesEnv ? "Chatbot desabilitado nesta versão" : "Digite sua pergunta sobre minha experiência..."}
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-                  disabled={isLoading}
+                  disabled={isLoading || isGitHubPagesEnv}
                 />
-                <button className="button black" onClick={handleSendMessage} disabled={isLoading}>
-                  {isLoading ? "Processando..." : "Enviar"}
+                <button onClick={handleSendMessage} disabled={isLoading || isGitHubPagesEnv}>
+                  <img src={getImagePath("/imgs/send.png")} alt="Enviar" width="48" />
                 </button>
+                {isGitHubPagesEnv && (
+                  <button onClick={() => setIsGitHubPagesEnv(false)} className="button black">
+                    Habilitar Chatbot
+                  </button>
+                )}
               </div>
             </div>
           </div>
