@@ -94,7 +94,10 @@ export default function Home() {
 
       const data = await response.json();
 
-      const botResponse = data.choices[0].message.content;
+      const regex = /\\boxed\{([^}]+)\}/;
+      const match = data.choices[0].message.content.match(regex);
+      
+      const botResponse = match ? match[1] : data.choices[0].message.content;
       const formattedResponse = formatResponse(botResponse);
 
       setTypingText("");
@@ -363,35 +366,20 @@ export default function Home() {
                       </div>
                     </li>
                   )}
-                  {isGitHubPagesEnv && (
-                    <li className="disabled-message">
-                      <span className="avatar bot">
-                        <img src={getImagePath("/imgs/deepseek.png")} alt="AI" width="64" height="64" />
-                      </span>
-                      <div className="message">
-                        O chatbot está temporariamente desabilitado nesta versão do site. Para interagir com o chatbot, por favor acesse a versão local do site ou entre em contato diretamente através do email luiscarlosdutrajunior23@gmail.com
-                      </div>
-                    </li>
-                  )}
                 </ul>
               </div>
               <div className="chat-message">
                 <input
                   type="text"
-                  placeholder={isGitHubPagesEnv ? "Chatbot desabilitado nesta versão" : "Digite sua pergunta sobre minha experiência..."}
+                  placeholder="Digite sua pergunta sobre minha experiência..."
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-                  disabled={isLoading || isGitHubPagesEnv}
+                  disabled={isLoading}
                 />
-                <button onClick={handleSendMessage} disabled={isLoading || isGitHubPagesEnv}>
+                <button onClick={handleSendMessage} disabled={isLoading}>
                   <img src={getImagePath("/imgs/send.png")} alt="Enviar" width="48" />
                 </button>
-                {isGitHubPagesEnv && (
-                  <button onClick={() => setIsGitHubPagesEnv(false)} className="button black">
-                    Habilitar Chatbot
-                  </button>
-                )}
               </div>
             </div>
           </div>
