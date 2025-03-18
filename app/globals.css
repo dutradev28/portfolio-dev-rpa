@@ -618,6 +618,16 @@ h3 {
 		}
 	}
 }
+
+/* Estilos para a mensagem de desabilitação do chatbot no GitHub Pages */
+.chatbot .chat-box .scroll-area ul li.disabled-message {
+	background-color: var(--yellow-100);
+	border: 1px solid var(--yellow-400);
+	padding: 10px;
+	border-radius: 10px;
+	margin: 10px 0;
+}
+
 .cursor {	
 	display: inline-block;
 	width: 1px; 

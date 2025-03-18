@@ -377,8 +377,8 @@ export default function Home() {
                   onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
                   disabled={isLoading}
                 />
-                <button onClick={handleSendMessage} disabled={isLoading}>
-                  <img src={getImagePath("/imgs/send.png")} alt="Enviar" width="48" />
+                <button className="button black" onClick={handleSendMessage} disabled={isLoading}>
+                  {isLoading ? "Processando..." : "Enviar"}
                 </button>
               </div>
             </div>
