@@ -769,7 +769,7 @@ h3 {
         .chat-box {
             background-color: var(--base-100);
             input {
-                background-color: #f5f5f5;
+                background-color: var(--base-1002);
                 color: #000;
                 border: 1px solid #ddd;
                 border-radius: 10px;
@@ -784,7 +784,7 @@ h3 {
                 &:focus {
                     outline: none;
                     border-color: var(--blue);
-                    background-color: #fff;
+                    background-color: var(--base-1002);
                 }
             }
             button {
