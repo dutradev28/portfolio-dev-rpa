@@ -45,9 +45,38 @@ export default function Home() {
   };
 
   const formatResponse = (text) => {
+    // Remove o JSON bruto se estiver presente
+    if (text.includes('```json')) {
+        text = text.replace(/```json\n?|\n?```/g, '');
+    }
+    
+    // Remove o \boxed{} se estiver presente
+    const regex = /\\boxed\{([^}]+)\}/;
+    const match = text.match(regex);
+    if (match) {
+        text = match[1];
+    }
+
+    // Remove aspas extras e espaços desnecessários
     text = text.replace(/^"+|"+$/g, '');
     text = text.trim();
     text = text.replace(/\s+/g, ' ');
+
+    // Formata o texto para ficar mais conversacional
+    text = text.replace(/\n/g, ' ');
+    text = text.replace(/\*\*/g, '');
+    text = text.replace(/\*/g, '');
+    text = text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+    text = text.replace(/###/g, '');
+    text = text.replace(/####/g, '');
+    text = text.replace(/-/g, '•');
+
+    // Adiciona pontuação adequada
+    text = text.replace(/([.!?])\s*([A-Z])/g, '$1\n\n$2');
+    
+    // Remove espaços múltiplos
+    text = text.replace(/\s+/g, ' ');
+    
     return text;
   };
 
@@ -85,21 +114,17 @@ export default function Home() {
           messages: [
             {
               role: "system",
-              content: `Você é um assistente profissional que responde perguntas sobre o currículo de Luis Carlos Dutra Junior. Use as seguintes informações para basear suas respostas:
+              content: `Você é um assistente que responde perguntas sobre o currículo de Luis Carlos Dutra Junior. Use as seguintes informações:
 
 ${JSON.stringify(curriculo, null, 2)}
 
-Ao responder:
-1. Seja profissional e cordial
-2. Estruture as informações de forma clara e organizada
-3. Use pontuação adequada e formatação consistente
-4. Evite repetições desnecessárias
-5. Destaque informações relevantes de forma objetiva
-6. Mantenha um tom profissional e acolhedor
-7. Formate datas e números de forma padronizada
-8. Use parágrafos para separar diferentes tipos de informação
-
-Responda de forma clara e concisa, com base nas informações fornecidas.`
+Regras para respostas:
+1. Seja direto e conciso
+2. Evite repetições
+3. Destaque apenas informações relevantes
+4. Use linguagem simples e clara
+5. Limite a resposta a 2-3 parágrafos
+6. Mantenha um tom profissional mas amigável`
             },
             {
               role: "user",
