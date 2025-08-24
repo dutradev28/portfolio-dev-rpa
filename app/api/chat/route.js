@@ -19,7 +19,7 @@ Pergunta do usuário: ${message}`;
         "HTTP-Referer": "https://dutradev28.github.io/portfolio-dev-rpa",
         "X-Title": "Chatbot",
       },
-      model: "deepseek/deepseek-r1-zero:free",
+      model: "deepseek/deepseek-r1-0528:free",
       messages: [
         {
           role: "system",
