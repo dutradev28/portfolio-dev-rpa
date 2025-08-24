@@ -34,7 +34,8 @@
           "MongoDB",
           "Threading",
           "Queue",
-          "Contextlib"
+          "Contextlib",
+          "N8N"
         ]
       },
       {
@@ -79,7 +80,7 @@
         "curso": "Análise e Desenvolvimento de Sistemas",
         "nivel": "Tecnólogo",
         "periodo": "2023 - 2025",
-        "status": "Cursando"
+        "status": "Formado"
       }
     ],
     "skills": {
