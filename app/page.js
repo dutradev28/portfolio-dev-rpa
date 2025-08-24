@@ -118,7 +118,7 @@ export default function Home() {
           "X-Title": "Chatbot"
         },
         body: JSON.stringify({
-          model: "deepseek/deepseek-r1-zero:free",
+          model: "deepseek/deepseek-r1-0528:free",
           messages: [
             {
               role: "system",
